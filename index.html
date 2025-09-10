@@ -1,11 +1,81 @@
+<!-- filepath: /hort-consulting-site/hort-consulting-site/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Personal Site</title>
+  <title>Horticultural Consulting Firm</title>
+  <!-- Google Fonts: Architects Daughter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+  <!-- Google Material Symbols (variable icons) -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=eco" />
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Add your HTML content here -->
+  <!-- Banner with background image and heading -->
+  <div class="banner">
+    <!-- Banner content wrapper for centering logo and heading together -->
+    <div class="banner-content">
+      <!-- Logo image, just to the left of the heading -->
+      <img src="img/CHC Logo.png" alt="CHC Logo" class="banner-logo">
+      <h1>Calabrese Horticultural Consulting</h1>
+    </div>
+  </div>
+
+  <!-- Floating navigation bar under the banner -->
+  <!-- This nav bar stays at the top under the banner and lets users jump to sections -->
+  <nav class="navbar">
+    <a href="#home">Home</a>
+    <a href="#bio">Bio</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#inspirations">Inspirations</a>
+    <a href="#contact">Contact</a> <!-- Added Contact tab -->
+  </nav>
+
+  <!-- Add an id="home" at the top for the Home link -->
+  <div id="home"></div>
+
+  <section id="bio">
+    <h2><span class="material-symbols-outlined">eco</span> Bio</h2>
+    <p>I am a Certified Horticulturist dedicated to helping you grow your green industry presence. With more than 20 years of experience in the field providing expert communications and operations solutions tailored to your needs.</p>
+  </section>
+
+  <section id="skills">
+    <h2><span class="material-symbols-outlined">eco</span> Skills</h2>
+    <ul>
+      <li>Operations Specialist</li>
+      <li>Communications Solutions</li>
+      <li>Project Management</li>
+      <li>Market Analysis</li>
+      <li>Design Review</li>
+      <li>Site Planning</li>
+      <li>IPM Consultation</li>
+      <li>Training & Education</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2><span class="material-symbols-outlined">eco</span> Projects & Clients</h2>
+    <p></p>
+    <ul>
+      <li>Community Garden Developers</li>
+      <li>Residential Landscape Contractors</li>
+      <li>Urban Green Space Designs</li>
+      <li>Estate Management Teams</li>
+      <li>Landscape Architectural Firms</li>
+      <li>Green Roof Installers</li>
+    </ul>
+  </section>
+
+  <section id="inspirations">
+    <h2><span class="material-symbols-outlined">eco</span> Inspirations</h2>
+    <p>We draw inspiration from nature. Through sustainable practices and innovative gardening techniques, the goal is to help you elevate your business and create beautiful and functional green spaces for your clients.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Calabrese Horticultural Consulting</p>
+  </footer>
 </body>
 </html>

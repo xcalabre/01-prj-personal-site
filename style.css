@@ -1,1 +1,203 @@
-/* Add you CSS here */
+/* 
+  This CSS file styles the horticultural consulting firm's website. 
+  It includes basic styles for layout, colors, fonts, and spacing.
+*/
+
+/* Set a background color for the whole page */
+body {
+  background-color: #bbccac; /* Light green background */
+  font-family: "Architects Daughter", cursive; /* Use Architects Daughter font */
+  margin: 0; /* Remove default margin */
+  padding: 20px; /* Add padding around the content */
+  text-align: center; /* Center all inline-block elements like section boxes */
+}
+
+/* Style for the main headings */
+h1, h2 {
+  color: #3e623f; /* Dark green color for headings */
+}
+
+/* Style for paragraphs */
+p {
+  color: #333; /* Dark gray color for text */
+  line-height: 1.6; /* Increase line height for readability */
+}
+
+/* Make sections appear as boxes aligned across the page */
+section {
+  display: inline-block;      /* Allows sections to sit side by side */
+  vertical-align: top;        /* Aligns the tops of the boxes */
+  width: 300px;               /* Sets a fixed width for each box */
+  margin-right: 20px;         /* Adds space between boxes */
+  margin-bottom: 20px;        /* Adds space below each box */
+  padding: 15px;              /* Padding inside each box */
+  border: 1px solid #ccc;     /* Light gray border */
+  border-radius: 5px;         /* Rounded corners */
+  background-color: rgba(255,255,255,0.5); /* White background at 50% opacity */
+  box-sizing: border-box;     /* Includes padding and border in width */
+  text-align: left;           /* Keep text inside boxes left-aligned */
+  transition: 
+    transform 0.2s ease,
+    background-color 0.2s ease;
+}
+
+/* Optional: Make sure the last section doesn't have extra margin on the right */
+section:last-of-type {
+  margin-right: 0;
+}
+
+/* Add a hover effect to each section box */
+section:hover {
+  /* Slightly increase the size of the box */
+  transform: scale(1.04); /* Makes the box 4% larger on hover */
+  /* Increase the background opacity to 90% (0.9) for better visibility */
+  background-color: rgba(255,255,255,0.9);
+  /* Add a smooth transition for the effect */
+  transition: 
+    transform 0.2s ease,
+    background-color 0.2s ease;
+}
+
+/* Style for links */
+a {
+  color: #3e623f; /* Dark green color for links */
+  text-decoration: none; /* Remove underline from links */
+}
+
+a:hover {
+  text-decoration: underline; /* Underline links on hover */
+}
+
+/* This class uses the Architects Daughter font from Google Fonts */
+.architects-daughter-regular {
+  font-family: "Architects Daughter", cursive;
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Banner at the top with a background image and fading opacity effect */
+/* This class creates a full-width banner with a background image that fades from 100% to 25% opacity from top to bottom */
+.banner {
+  width: 100%; /* Make the banner stretch across the page */
+  height: 250px; /* Set the height of the banner */
+  /* The background uses your image and a gradient overlay to create the fade effect */
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,0) 0%,      /* No white at the very top */
+      rgba(255,255,255,0) 30%,     /* No white for the top 30% (image fully visible) */
+      rgba(255,255,255,0.75) 100%  /* 75% white at the bottom (image at 25% opacity) */
+    ),
+    url('img/Lure garden Chicago.png') no-repeat center center;
+  background-size: cover; /* Stretch the image to cover the banner area */
+  margin-bottom: 20px; /* Add space below the banner */
+}
+
+/* Banner content wrapper to center logo and heading together */
+.banner-content {
+  display: flex;                /* Use flex to align items in a row */
+  align-items: center;          /* Vertically center logo and heading */
+  justify-content: center;      /* Horizontally center the group */
+  height: 100%;                 /* Fill the banner height */
+}
+
+/* Style for the logo image in the banner */
+.banner-logo {
+  height: 250px;                 /* Set logo height (adjust as needed) */
+  margin-right: 20px;           /* Space between logo and heading */
+}
+
+/* Style the h1 inside the banner to be large, centered, and with a shadow for better contrast */
+.banner h1 {
+  color: #dbe4d3;                 /* Light green color for the heading */
+  text-align: center;             /* Center the text horizontally */
+  font-size: 3em;                 /* Make the heading even larger */
+  margin: 0;                      /* Remove default margin */
+  padding-top: 0;               /* Remove top padding since flex centers vertically */
+  font-family: "Architects Daughter", cursive; /* Use the special font */
+  font-weight: 600;               /* Make the heading bold */
+  text-shadow: 2px 2px 8px #333;  /* Add a dark shadow behind the text for contrast */
+}
+
+/* 
+  To make the image fill the page and have the opacity at 100% at the top and bottom,
+  with a gradual reduction to 25% at the horizontal center, we use a fixed-position image
+  and overlay a horizontal gradient.
+*/
+
+/* The background image fills the whole page */
+body::before {
+  content: ""; /* This creates a pseudo-element for the background */
+  position: fixed; /* Keeps the image fixed while scrolling */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  z-index: -2; /* Puts the image behind everything */
+  background: url('img/Lure garden Chicago.png') no-repeat center center;
+  background-size: cover; /* Stretch the image to cover the page */
+  opacity: 1; /* Full opacity for the image itself */
+}
+
+/* Overlay a horizontal gradient to fade the image at the center */
+body::after {
+  content: ""; /* This creates a pseudo-element for the gradient overlay */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* Puts the gradient above the image but below the content */
+  /* The gradient is transparent at the top and bottom, and semi-transparent white at the center */
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0) 0%,      /* 100% opacity at the top */
+    rgba(255,255,255,0.75) 50%,  /* 25% opacity at the center */
+    rgba(255,255,255,0) 100%     /* 100% opacity at the bottom */
+  );
+  pointer-events: none; /* Allows clicks to pass through */
+}
+
+/* Style for the floating navigation bar */
+.navbar {
+  background-color: transparent; /* Transparent background for the navbar */
+  padding: 12px 0;               /* Space above and below the links */
+  text-align: center;            /* Center the links */
+  position: sticky;              /* Keeps the navbar at the top when scrolling */
+  top: 0;                        /* Stick to the top of the page */
+  z-index: 10;                   /* Make sure it stays above other content */
+  margin-bottom: 20px;           /* Space below the navbar */
+  width: 100%;
+}
+
+/* Style for the links inside the navbar */
+.navbar a {
+  color: #fff;                                /* White text for links */
+  text-decoration: none;                      /* No underline */
+  margin: 0 32px;                             /* More space between links */
+  font-size: 1.4em;                           /* Larger text for better visibility */
+  font-family: "Architects Daughter", cursive;/* Match site font */
+  transition: color 0.2s;                     /* Smooth color change on hover */
+  display: inline-block;                      /* Keep links in a row */
+  padding: 4px 0;                             /* Padding for clickable area */
+  text-shadow: 2px 2px 8px #333;              /* Add a dark shadow behind the text for contrast */
+}
+
+/* Change link color on hover for feedback */
+.navbar a:hover {
+  color: #dbe4d3;             /* Light green on hover */
+}
+
+/* Center the section titles (h2) in each section */
+section h2 {
+  text-align: center; /* This centers the section title */
+}
+
+/* Style for Google Material Symbols icons */
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48;
+}
