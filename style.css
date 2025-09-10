@@ -185,7 +185,7 @@ body::after {
 
 /* Change link color on hover for feedback */
 .navbar a:hover {
-  color: #dbe4d3;             /* Light green on hover */
+  color: #3e623f; /* Dark green on hover */
 }
 
 /* Center the section titles (h2) in each section */
