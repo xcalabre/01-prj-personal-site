@@ -107,6 +107,15 @@ a:hover {
   margin-right: 20px;           /* Space between logo and heading */
 }
 
+/* Style for the personal photo in the banner */
+.banner-photo {
+  height: 150px;                 /* Set photo height to match logo */
+  width: 150px;                  /* Make the photo a square */
+  border-radius: 50%;            /* Make the photo round */
+  object-fit: cover;             /* Crop the image to fit the circle */
+  margin-left: 20px;             /* Space between heading and photo */
+}
+
 /* Style the h1 inside the banner to be large, centered, and with a shadow for better contrast */
 .banner h1 {
   color: #dbe4d3;                 /* Light green color for the heading */
